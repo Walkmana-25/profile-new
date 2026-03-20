@@ -1,27 +1,13 @@
-import {
-  Button,
-  Center,
-  VStack,
-  Flex,
-  Box,
-  Text,
-  Link,
-  Stack,
-  Image
-} from "@chakra-ui/react";
+import { Center, VStack, Stack, Image } from "@chakra-ui/react";
 
 export function Welcome() {
-
   return (
-    <Center h='svh' w='svw'>
-      <Stack>
-        <Image
-          src="/public/avatar.jpg"
-          alt="avatar"
-          borderRadius="full"
-        />
-
-      </Stack>
+    <Center h="100%" w="svw">
+      <VStack>
+        <Stack>
+          <Image src="/public/avatar.jpg" alt="avatar" borderRadius="full" />
+        </Stack>
+      </VStack>
     </Center>
   );
 }
