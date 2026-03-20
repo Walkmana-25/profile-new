@@ -20,7 +20,7 @@ const NAV_ITEMS = [
   { label: "Contact", href: "/contact" },
 ]
 
-const LOGO_TEXT = "Portfolio"
+const LOGO_TEXT = "Yuta Takahashi"
 
 export const NAVBAR_HEIGHT = "7svh";
 
