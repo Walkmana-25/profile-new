@@ -6,7 +6,10 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "deploy": "pnpm run build && wrangler deploy",
+    "preview": "pnpm run build && wrangler dev",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.34.0",
@@ -16,7 +19,6 @@
     "@react-router/serve": "7.13.1",
     "@tiptap/pm": "^3.20.4",
     "@tiptap/react": "^3.20.4",
-    "isbot": "^5.1.36",
     "next-themes": "^0.4.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -24,14 +26,17 @@
     "react-router": "7.13.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.29.1",
     "@react-router/dev": "7.13.1",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "isbot": "^5.1.36",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^7.1.7",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.75.0"
   }
 }
