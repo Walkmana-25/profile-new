@@ -84,7 +84,7 @@ export function Navbar() {
                 <DrawerHeader>
                   <HStack gap={2}>
                     <Image
-                      src="https://via.placeholder.com/40"
+                      src="/public/avatar.jpg"
                       alt="Logo"
                       boxSize="40px"
                       borderRadius="full"

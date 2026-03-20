@@ -38,7 +38,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Provider>
           <Navbar />
-          {children}
+          <Box h="93svh">
+            {children}
+            </Box>
         </Provider>
         <ScrollRestoration />
         <Scripts />
