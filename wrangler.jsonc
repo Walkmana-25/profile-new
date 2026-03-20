@@ -5,8 +5,13 @@
   "observability": {
     "enabled": true
   },
-  "main": "./workers/app.ts",
+  "main": "./build/server/index.js",
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  "assets": {
+    "include": [
+      "build/client"
+    ]
+  }
 }
