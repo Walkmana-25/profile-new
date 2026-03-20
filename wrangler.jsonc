@@ -5,12 +5,12 @@
   "observability": {
     "enabled": true
   },
-  "main": "./build/server/index.js",
+  "main": "./build/server/worker.js",
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "assets": {
-    "directory": "./build/client/",
+    "directory": "./build/client",
     "html_handling": "auto-trailing-slash"
   }
 }
