@@ -1,5 +1,4 @@
 import { reactRouter } from "@react-router/dev/vite";
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { writeFileSync } from "node:fs";
@@ -88,5 +87,5 @@ export default {
 }
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), cloudflareWorkerEntry()],
+  plugins: [reactRouter(), tsconfigPaths(), cloudflareWorkerEntry()],
 });

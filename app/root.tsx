@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Box, Container, Code } from "@chakra-ui/react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -65,14 +66,16 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <Box as="main" pt={16} px={4}>
+      <Container maxW="container.xl">
+        <h1>{message}</h1>
+        <p>{details}</p>
+        {stack && (
+          <Code p={4} display="block" overflowX="auto" whiteSpace="pre">
+            {stack}
+          </Code>
+        )}
+      </Container>
+    </Box>
   );
 }
