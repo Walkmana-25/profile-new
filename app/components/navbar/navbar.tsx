@@ -22,6 +22,8 @@ const NAV_ITEMS = [
 
 const LOGO_TEXT = "Portfolio"
 
+export const NAVBAR_HEIGHT = "7svh";
+
 export function Navbar() {
   return (
     <Box
@@ -33,15 +35,15 @@ export function Navbar() {
       borderBottom="1px solid"
       borderColor="border.subtle"
       px={{ base: 4, md: 8 }}
-      py={3}
+      h={NAVBAR_HEIGHT}
     >
-      <Flex justify="space-between" align="center" maxW="6xl" mx="auto">
+      <Flex justify="space-between" align="center" maxW="6xl" mx="auto" h="full">
         {/* Logo */}
         <Link to="/">
           <HStack gap={2}>
             <Image
-              src="https://via.placeholder.com/40"
-              alt="Logo"
+              src="/public/avatar.jpg"
+              alt="avatar"
               boxSize="40px"
               borderRadius="full"
             />
