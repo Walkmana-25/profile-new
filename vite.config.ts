@@ -18,54 +18,23 @@ function cloudflareWorkerEntry() {
         // Create a Cloudflare Worker wrapper that bridges React Router to Cloudflare Workers
         const workerContent = `
 import * as build from "./index.js";
-import { createStaticHandler, createStaticRouter } from "react-router";
+import { createRequestHandler } from "react-router";
 
-// Create static handler from routes
-const handler = createStaticHandler(build.routes);
+// Let React Router handle route matching/data APIs from the server build.
+const handler = createRequestHandler(build, "production");
 
 // Create request handler for Cloudflare Workers
 async function handleRequest(request, env, ctx) {
-  // Create load context with Cloudflare bindings
+  // Expose Cloudflare bindings/utilities to loaders/actions via load context.
   const loadContext = {
     env,
     cf: request.cf,
     waitUntil: ctx.waitUntil.bind(ctx),
+    passThroughOnException: ctx.passThroughOnException.bind(ctx),
   };
 
   try {
-    // Use React Router's static handler to properly handle the request
-    const context = await handler.query(request, {
-      requestContext: loadContext,
-    });
-
-    // If context is a Response, return it directly (e.g., redirects)
-    if (context instanceof Response) {
-      return context;
-    }
-
-    // Create static router with the context
-    const router = createStaticRouter(build.routes, context);
-
-    // Create the entry context for React Router
-    const entryContext = {
-      manifest: build.assets,
-      routeModules: build.routes,
-      staticHandlerContext: context,
-      router,
-      isSpaMode: false,
-    };
-
-    // Call the handleRequest from entry.server
-    const response = await build.entry.module.default(
-      request,
-      context.statusCode || 200,
-      new Headers({
-        "Content-Type": "text/html; charset=UTF-8"
-      }),
-      entryContext,
-      loadContext
-    );
-    return response;
+    return await handler(request, loadContext);
   } catch (error) {
     console.error("Request handler error:", error);
     return new Response("Internal Server Error", {
