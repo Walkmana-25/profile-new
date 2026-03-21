@@ -16,9 +16,9 @@ import {
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
   { label: "Apps", href: "/apps" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const LOGO_TEXT = "Yuta Takahashi";
