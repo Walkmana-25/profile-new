@@ -1,13 +1,15 @@
 import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router";
+import { LuPin } from "react-icons/lu";
 import type { App } from "./types";
 import { Tag } from "~/components/ui/tag";
 
 interface AppCardProps {
   app: App;
+  isPinned?: boolean;
 }
 
-export function AppCard({ app }: AppCardProps) {
+export function AppCard({ app, isPinned }: AppCardProps) {
   const imageSrc = app.image || "/no-image.webp";
 
   return (
@@ -24,9 +26,12 @@ export function AppCard({ app }: AppCardProps) {
       >
         <HStack gap={0} align="stretch">
           <VStack align="start" gap={2} p={4} flex="1">
-            <Text fontSize="lg" fontWeight="bold" lineClamp={1}>
-              {app.title}
-            </Text>
+            <HStack gap={2}>
+              <Text fontSize="lg" fontWeight="bold" lineClamp={1}>
+                {app.title}
+              </Text>
+              {isPinned && <LuPin />}
+            </HStack>
 
             <Text color="fg.muted" lineClamp={2} fontSize="sm">
               {app.description}

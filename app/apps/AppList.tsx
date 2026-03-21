@@ -20,7 +20,7 @@ export function AppList({ apps }: AppListProps) {
             </Text>
             <VStack gap={4} align="stretch">
               {pinnedApps.map((app) => (
-                <AppCard key={app.slug} app={app} />
+                <AppCard key={app.slug} app={app} isPinned />
               ))}
             </VStack>
           </VStack>
