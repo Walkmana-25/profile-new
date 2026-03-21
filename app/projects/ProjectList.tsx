@@ -1,6 +1,12 @@
 import { Container, Text, VStack } from "@chakra-ui/react";
 import { ProjectCard } from "./ProjectCard";
 import type { Project } from "./types";
+import {
+  TimelineRoot,
+  TimelineItem,
+  TimelineConnector,
+  TimelineContent,
+} from "~/components/ui/timeline";
 
 interface ProjectListProps {
   projects: Project[];
@@ -20,7 +26,7 @@ export function ProjectList({ projects }: ProjectListProps) {
             </Text>
             <VStack gap={4} align="stretch">
               {pinnedProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+                <ProjectCard key={project.slug} project={project} isPinned />
               ))}
             </VStack>
           </VStack>
@@ -31,11 +37,16 @@ export function ProjectList({ projects }: ProjectListProps) {
             <Text fontSize="2xl" fontWeight="bold">
               TIMELINE
             </Text>
-            <VStack gap={4} align="stretch">
+            <TimelineRoot>
               {timelineProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+                <TimelineItem key={project.slug}>
+                  <TimelineConnector />
+                  <TimelineContent>
+                    <ProjectCard project={project} isPinned={false} />
+                  </TimelineContent>
+                </TimelineItem>
               ))}
-            </VStack>
+            </TimelineRoot>
           </VStack>
         )}
       </VStack>

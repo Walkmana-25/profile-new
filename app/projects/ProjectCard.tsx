@@ -1,13 +1,16 @@
 import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router";
+import { LuPin } from "react-icons/lu";
 import type { Project } from "./types";
 import { formatDateRange } from "./utils";
+import { Tag } from "~/components/ui/tag";
 
 interface ProjectCardProps {
   project: Project;
+  isPinned?: boolean;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, isPinned }: ProjectCardProps) {
   const imageSrc = project.image || "/no-image.webp";
 
   return (
@@ -28,13 +31,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {formatDateRange(project.startDate, project.endDate)}
             </Text>
 
-            <Text fontSize="lg" fontWeight="bold" lineClamp={1}>
-              {project.title}
-            </Text>
+            <HStack gap={2}>
+              <Text fontSize="lg" fontWeight="bold" lineClamp={1}>
+                {project.title}
+              </Text>
+              {isPinned && <LuPin />}
+            </HStack>
 
             <Text color="fg.muted" lineClamp={2} fontSize="sm">
               {project.description}
             </Text>
+
+            {project.tags.length > 0 && (
+              <HStack gap={2} flexWrap="wrap">
+                {project.tags.map((tag) => (
+                  <Tag key={tag} size="sm" variant="subtle">
+                    {tag}
+                  </Tag>
+                ))}
+              </HStack>
+            )}
           </VStack>
 
           <Image
