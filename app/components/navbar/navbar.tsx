@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Box, Flex, HStack, IconButton, Image, Text } from "@chakra-ui/react"
-import { Link } from "react-router"
-import { LuMenu } from "react-icons/lu"
-import { ColorModeButton } from "../ui/color-mode"
+import { Box, Flex, HStack, IconButton, Image, Text } from "@chakra-ui/react";
+import { Link } from "react-router";
+import { LuMenu } from "react-icons/lu";
+import { ColorModeButton } from "../ui/color-mode";
 import {
   DrawerRoot,
   DrawerTrigger,
@@ -11,16 +11,17 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerCloseTrigger,
-} from "../ui/drawer"
+} from "../ui/drawer";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
-]
+  { label: "Apps", href: "/apps" },
+  { label: "About", href: "/about" },
+];
 
-const LOGO_TEXT = "Yuta Takahashi"
+const LOGO_TEXT = "Yuta Takahashi";
 
 export const NAVBAR_HEIGHT = "7svh";
 
@@ -37,7 +38,13 @@ export function Navbar() {
       px={{ base: 4, md: 8 }}
       h={NAVBAR_HEIGHT}
     >
-      <Flex justify="space-between" align="center" maxW="6xl" mx="auto" h="full">
+      <Flex
+        justify="space-between"
+        align="center"
+        maxW="6xl"
+        mx="auto"
+        h="full"
+      >
         {/* Logo */}
         <Link to="/">
           <HStack gap={2}>
@@ -47,7 +54,11 @@ export function Navbar() {
               boxSize="40px"
               borderRadius="full"
             />
-            <Text fontWeight="bold" fontSize="lg" display={{ base: "none", sm: "block" }}>
+            <Text
+              fontWeight="bold"
+              fontSize="lg"
+              display={{ base: "none", sm: "block" }}
+            >
               {LOGO_TEXT}
             </Text>
           </HStack>
@@ -115,5 +126,5 @@ export function Navbar() {
         </HStack>
       </Flex>
     </Box>
-  )
+  );
 }
