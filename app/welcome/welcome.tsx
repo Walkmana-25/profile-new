@@ -41,16 +41,32 @@ export function Welcome() {
           </VStack>
         </Stack>
         <HStack gap={8}>
-          <Link href="https://github.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/Walkmana-25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon as={FaGithub} boxSize={8} />
           </Link>
-          <Link href="https://x.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://x.com/walkmana_25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon as={FaXTwitter} boxSize={8} />
           </Link>
-          <Link href="https://zenn.dev/yuuta123456789" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://zenn.dev/walkmana_25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon as={SiZenn} boxSize={8} />
           </Link>
-          <Link href="https://speakerdeck.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://speakerdeck.com/walkmana25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon as={SiSpeakerdeck} boxSize={8} />
           </Link>
         </HStack>
