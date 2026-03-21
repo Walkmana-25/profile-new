@@ -1,5 +1,5 @@
-import { underConstruction } from "~/components/construction/construction";
+import { AboutPage } from "~/about/AboutPage";
 
-export default function Home() {
-  return underConstruction("About");
+export default function About() {
+  return <AboutPage />;
 }
