@@ -4,9 +4,12 @@ import {
   Stack,
   Image,
   HStack,
-  Box,
   Text,
+  Icon,
+  Link,
 } from "@chakra-ui/react";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { SiZenn, SiSpeakerdeck } from "react-icons/si";
 
 export function Welcome() {
   return (
@@ -37,10 +40,19 @@ export function Welcome() {
             </Text>
           </VStack>
         </Stack>
-        <HStack>
-          <Box>icon a</Box>
-          <Box>icon b</Box>
-          <Box>icon c</Box>
+        <HStack gap={8}>
+          <Link href="https://github.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+            <Icon as={FaGithub} boxSize={8} />
+          </Link>
+          <Link href="https://x.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+            <Icon as={FaXTwitter} boxSize={8} />
+          </Link>
+          <Link href="https://zenn.dev/yuuta123456789" target="_blank" rel="noopener noreferrer">
+            <Icon as={SiZenn} boxSize={8} />
+          </Link>
+          <Link href="https://speakerdeck.com/yuuta123456789" target="_blank" rel="noopener noreferrer">
+            <Icon as={SiSpeakerdeck} boxSize={8} />
+          </Link>
         </HStack>
       </VStack>
     </Center>
