@@ -4,13 +4,14 @@ import {
   HStack,
   Icon,
   Link,
+  SimpleGrid,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { FaEnvelope, FaXTwitter } from "react-icons/fa6";
 import { contactData } from "./data";
-import type { ContactIcon } from "./types";
+import type { ContactMethod } from "./types";
 
 const iconMap = {
   email: FaEnvelope,
@@ -18,12 +19,7 @@ const iconMap = {
 } as const;
 
 interface ContactCardProps {
-  contact: {
-    platform: string;
-    value: string;
-    url: string;
-    icon: ContactIcon;
-  };
+  contact: ContactMethod;
 }
 
 function ContactCard({ contact }: ContactCardProps) {
@@ -37,6 +33,8 @@ function ContactCard({ contact }: ContactCardProps) {
       rel={isEmail ? undefined : "noopener noreferrer"}
       textDecoration="none"
       _hover={{ textDecoration: "none" }}
+      display="block"
+      w="100%"
     >
       <Box
         borderRadius="lg"
@@ -49,6 +47,8 @@ function ContactCard({ contact }: ContactCardProps) {
           borderColor: "accent.fg",
           shadow: "md",
         }}
+        w="100%"
+        h="100%"
       >
         <HStack gap={4}>
           <Icon as={IconComponent} boxSize={6} color="accent.fg" />
@@ -73,11 +73,11 @@ export function ContactPage() {
         <Text textStyle="2xl" fontWeight="bold">
           Contact
         </Text>
-        <VStack gap={4} align="stretch">
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
           {contactData.map((contact) => (
             <ContactCard key={contact.platform} contact={contact} />
           ))}
-        </VStack>
+        </SimpleGrid>
       </VStack>
     </Container>
   );
