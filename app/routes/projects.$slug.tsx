@@ -1,6 +1,13 @@
+import type { Route } from "./+types/projects.$slug";
 import { ProjectDetail } from "~/projects/ProjectDetail";
 import { getProject } from "~/projects/utils";
 import type { Project } from "~/projects/types";
+
+export function meta({ loaderData }: Route.MetaArgs) {
+  return [
+    { title: `${loaderData.title} | Y.Takahashi` },
+  ];
+}
 
 export async function loader({ params }: { params: { slug: string } }): Promise<Project> {
   const project = await getProject(params.slug);

@@ -15,7 +15,7 @@ links:
     url: "https://github.com/Sapphillon/Sapphillon"
 ---
 
-Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。ユーザーの自然言語指示を受け取り、Webページ操作・ローカルファイル処理・外部機能呼び出しなどを一つのワークフローとして統合・実行するエンジン。
+Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。ユーザーの自然言語指示を受け取り、Webページ操作・ローカルファイル処理・外部機能呼び出しなどを1つのワークフローとして統合・実行するエンジン。
 
 ![Sapphillon Logo](/img/sapphillon_logo_light.svg)
 

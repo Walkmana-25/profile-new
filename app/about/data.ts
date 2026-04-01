@@ -33,7 +33,11 @@ export const profileData: Profile = {
         },
         {
           name: "TypeScript",
-          technologies: ["React", "Web"],
+          technologies: ["React", "Next.js", "Deno", "Web"],
+        },
+        {
+          name: "Python",
+          technologies: ["FastAPI", "OpenAI API", "SQLAlchemy"],
         },
       ],
     },
@@ -43,6 +47,7 @@ export const profileData: Profile = {
         {
           name: "サーバー構築（物理）",
           technologies: [
+            "Proxmox",
             "仮想基盤",
             "Kubernetes",
             "クラウド自作",
@@ -52,6 +57,10 @@ export const profileData: Profile = {
         {
           name: "Docker",
           technologies: ["DevContainer", "Docker Compose"],
+        },
+        {
+          name: "Linux",
+          technologies: ["Ubuntu", "Debian", "Arch Linux"],
         },
       ],
     },

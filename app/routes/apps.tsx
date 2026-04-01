@@ -3,6 +3,12 @@ import { Outlet, useLocation } from "react-router";
 import { AppList } from "~/apps/AppList";
 import { getApps } from "~/apps/utils";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Apps | Y.Takahashi" },
+  ];
+}
+
 export async function loader() {
   return await getApps();
 }

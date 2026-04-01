@@ -3,7 +3,7 @@ import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Yuta Takahashi's Portfolio" },
+    { title: "Portfolio | Y.Takahashi" },
     { name: "description", content: "Welcome to my portfolio!" },
   ];
 }

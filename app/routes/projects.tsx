@@ -3,6 +3,12 @@ import { Outlet, useLocation } from "react-router";
 import { ProjectList } from "~/projects/ProjectList";
 import { getProjects } from "~/projects/utils";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Projects | Y.Takahashi" },
+  ];
+}
+
 export async function loader() {
   return await getProjects();
 }
