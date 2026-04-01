@@ -29,9 +29,6 @@ importers:
       '@tiptap/react':
         specifier: ^3.20.4
         version: 3.20.4(@floating-ui/dom@1.7.6)(@tiptap/core@3.20.4(@tiptap/pm@3.20.4))(@tiptap/pm@3.20.4)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      eslint:
-        specifier: ^10.0.3
-        version: 10.0.3(jiti@2.6.1)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -72,6 +69,9 @@ importers:
       cheerio:
         specifier: ^1.2.0
         version: 1.2.0
+      eslint:
+        specifier: ^10.0.3
+        version: 10.0.3(jiti@2.6.1)
       isbot:
         specifier: ^5.1.36
         version: 5.1.36
