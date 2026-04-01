@@ -3,8 +3,8 @@ title: "Sapphillon"
 startDate: "2025-06-25"
 description: "Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。自然言語の指示から一連の処理を実行するエンジン"
 pinned: true
-image: "/img/sapphillon_logo_light.svg"
-imageDark: "/img/sapphillon_logo_dark.svg"
+image: "/img/sapphillon_icon_light.svg"
+imageDark: "/img/sapphillon_icon_dark.svg"
 tags:
   - "Floorp"
   - "LLM"
