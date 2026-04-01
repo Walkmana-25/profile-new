@@ -1,0 +1,36 @@
+---
+title: "Sapphillon"
+startDate: "2025-06-25"
+description: "Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。自然言語の指示から一連の処理を実行するエンジン"
+pinned: true
+image: "/img/sapphillon_icon_light.svg"
+imageDark: "/img/sapphillon_icon_dark.svg"
+tags:
+  - "Floorp"
+  - "LLM"
+  - "Workflow"
+  - "Automation"
+links:
+  - label: "GitHub"
+    url: "https://github.com/Sapphillon/Sapphillon"
+---
+
+Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。ユーザーの自然言語指示を受け取り、Webページ操作・ローカルファイル処理・外部機能呼び出しなどを1つのワークフローとして統合・実行するエンジン。
+
+![Sapphillon Logo](/img/sapphillon_logo_light.svg)
+
+## 動作の流れ
+
+1. ユーザーが自然言語で指示を出す
+2. LLMと連携して実行手順を明示的なワークフローとして生成
+3. ワークフローの内容を事前に確認可能
+4. 各プラグインを順次呼び出して処理を実行
+5. 結果をユーザーに提示
+
+## プラグインシステム
+
+プラグインランタイムにより、ブラウザ制御・ファイルシステム・検索・OCR・ローカルLLM連携などの機能をプラグインとして提供。用途に応じて拡張可能。
+
+## セキュリティ設計
+
+ワークフローとプラグインはそれぞれ独立したサンドボックス環境で実行し、システム本体と隔離。権限ベースのアクセス制御により、各プラグインがアクセス可能な機能・リソースを細かく制限する。
