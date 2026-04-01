@@ -13,3 +13,4 @@
 !.env.example
 
 # Generated files
+package-lock.json
