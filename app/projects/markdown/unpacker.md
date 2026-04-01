@@ -3,7 +3,7 @@ title: "Unpacker"
 startDate: "2023-02-11"
 endDate: "2023-03-04"
 description: "ブラウザブックマークをZero Shot Classificationを利用し自動で分類を行うソフトウェア"
-pinned: true
+pinned: false
 tags:
   - "Zero Shot Classification"
   - "Browser Extension"
