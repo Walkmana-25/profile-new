@@ -31,7 +31,7 @@ export function Welcome() {
           gap={50}
         >
           <Image
-            src="/public/avatar.jpg"
+            src="/avatar.jpg"
             alt="avatar"
             borderRadius="full"
             height={200}

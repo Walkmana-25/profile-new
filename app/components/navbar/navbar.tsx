@@ -49,7 +49,7 @@ export function Navbar() {
         <Link to="/">
           <HStack gap={2}>
             <Image
-              src="/public/avatar.jpg"
+              src="/avatar.jpg"
               alt="avatar"
               boxSize="40px"
               borderRadius="full"
@@ -95,7 +95,7 @@ export function Navbar() {
                 <DrawerHeader>
                   <HStack gap={2}>
                     <Image
-                      src="/public/avatar.jpg"
+                      src="/avatar.jpg"
                       alt="Logo"
                       boxSize="40px"
                       borderRadius="full"

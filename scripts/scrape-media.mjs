@@ -74,7 +74,7 @@ async function scrapeUrl(url) {
     console.log(`  ✓ ${title}`);
     return { url, title, description, ogImage };
   } catch (err) {
-    console.warn(`  ✗ Failed to fetch ${url}: ${err.message}`);
+    console.warn(`  ✗ Failed to fetch ${url}: ${err instanceof Error ? err.message : String(err)}`);
     return { url, title: "タイトル取得失敗", description: "", ogImage: null };
   } finally {
     clearTimeout(timeout);
@@ -115,7 +115,7 @@ async function main() {
       items.push(itemWithFallback);
     }
   } catch (err) {
-    console.error(`  ✗ Error during scraping: ${err.message}`);
+    console.error(`  ✗ Error during scraping: ${err instanceof Error ? err.message : String(err)}`);
     console.log(`  → Using empty data as fallback`);
     items = [];
   }
@@ -135,7 +135,7 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(`  ✗ Fatal error: ${err.message}`);
+  console.error(`  ✗ Fatal error: ${err instanceof Error ? err.message : String(err)}`);
   console.log(`  → Writing empty data as fallback`);
   
   const data = {

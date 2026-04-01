@@ -1,9 +1,9 @@
-import type { Profile } from "./types";
+import type { Profile, MediaItem } from "./types";
 import mediaData from "./media-data.json";
 
 export const profileData: Profile = {
   name: "Yuta Takahashi",
-  avatar: "/public/avatar.jpg",
+  avatar: "/avatar.jpg",
   affiliations: [
     {
       organization: "東洋大学",
@@ -143,5 +143,5 @@ export const profileData: Profile = {
       icon: "email",
     },
   ],
-  media: mediaData.items,
+  media: mediaData.items as MediaItem[],
 };
