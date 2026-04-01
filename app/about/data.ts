@@ -1,4 +1,5 @@
 import type { Profile } from "./types";
+import mediaData from "./media-data.json";
 
 export const profileData: Profile = {
   name: "Yuta Takahashi",
@@ -142,4 +143,5 @@ export const profileData: Profile = {
       icon: "email",
     },
   ],
+  media: mediaData.items,
 };

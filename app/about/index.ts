@@ -5,4 +5,5 @@ export { BasicInfoCard } from "./components/BasicInfoCard";
 export { BioSection } from "./components/BioSection";
 export { SkillsSection } from "./components/SkillsSection";
 export { InterestsSection } from "./components/InterestsSection";
+export { MediaSection } from "./components/MediaSection";
 export { SocialLinks } from "./components/SocialLinks";

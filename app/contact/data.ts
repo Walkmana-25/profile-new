@@ -11,8 +11,8 @@ export const contactData: ContactMethod[] = [
   {
     type: "social",
     platform: "X (Twitter)",
-    value: "@yourusername",
-    url: "https://x.com/yourusername",
+    value: "@walkmana_25",
+    url: "https://x.com/walkmana_25",
     icon: "twitter",
   },
 ];
