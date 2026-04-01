@@ -1,4 +1,4 @@
-import { Container, Text, VStack, HStack, Image, Link as ChakraLink } from "@chakra-ui/react";
+import { Container, Text, VStack, HStack, Image, Link as ChakraLink, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router";
 import ReactMarkdown from "react-markdown";
 import { Prose } from "~/components/ui/prose";
@@ -10,8 +10,36 @@ interface ProjectDetailProps {
   project: Project;
 }
 
+// カスタムimgコンポーネント：ダーク/ライトモードに応じて画像を切り替え
+function MarkdownImage({ src, alt }: { src?: string; alt?: string }) {
+  const { colorMode } = useColorMode();
+
+  if (!src) return null;
+
+  // 画像パスに応じてダーク/ライトモード用の画像に切り替え
+  let imageSrc = src;
+  if (colorMode === "dark") {
+    // 一般的なパターン: _light, _Light, -light, -Light を _dark, _Dark, -dark, -Dark に置換
+    imageSrc = src.replace(/[_-][Ll]ight(\.(svg|png|jpg|jpeg|webp))$/, "_dark$1");
+  }
+
+  return (
+    <img
+      src={imageSrc}
+      alt={alt}
+      style={{ width: "100%", height: "auto", borderRadius: "0.5rem" }}
+    />
+  );
+}
+
 export function ProjectDetail({ project }: ProjectDetailProps) {
-  const imageSrc = project.image || "/no-image.webp";
+  const { colorMode } = useColorMode();
+
+  // ヒーロー画像：ダーク/ライトモードに応じて切り替え
+  let heroImageSrc = project.image || "/no-image.webp";
+  if (colorMode === "dark" && project.imageDark) {
+    heroImageSrc = project.imageDark;
+  }
 
   return (
     <Container maxW="container.lg" py={8}>
@@ -23,12 +51,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </Link>
 
         <Image
-          src={imageSrc}
+          src={heroImageSrc}
           alt={project.title}
           w="100%"
           h="auto"
           maxH="400px"
-          objectFit="cover"
+          objectFit="contain"
           borderRadius="lg"
         />
 
@@ -56,7 +84,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           )}
 
           <Prose>
-            <ReactMarkdown>{project.content}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                img: MarkdownImage,
+              }}
+            >
+              {project.content}
+            </ReactMarkdown>
           </Prose>
 
           {project.links && project.links.length > 0 && (

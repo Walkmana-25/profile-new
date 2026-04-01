@@ -3,18 +3,21 @@ title: "Sapphillon"
 startDate: "2025-06-25"
 description: "Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。自然言語の指示から一連の処理を実行するエンジン"
 pinned: true
+image: "/img/sapphillon_logo_light.svg"
+imageDark: "/img/sapphillon_logo_dark.svg"
 tags:
   - "Floorp"
   - "LLM"
   - "Workflow"
   - "Automation"
-  - "Ryosuke Asano"
 links:
   - label: "GitHub"
     url: "https://github.com/Sapphillon/Sapphillon"
 ---
 
 Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。ユーザーの自然言語指示を受け取り、Webページ操作・ローカルファイル処理・外部機能呼び出しなどを一つのワークフローとして統合・実行するエンジン。
+
+![Sapphillon Logo](/img/sapphillon_logo_light.svg)
 
 ## 動作の流れ
 

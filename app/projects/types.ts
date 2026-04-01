@@ -5,6 +5,7 @@ export interface Project {
   endDate?: string;
   description: string;
   image?: string;
+  imageDark?: string;
   tags: string[];
   pinned: boolean;
   links?: { label: string; url: string }[];
@@ -17,6 +18,7 @@ export interface ProjectFrontmatter {
   endDate?: string;
   description: string;
   image?: string;
+  imageDark?: string;
   tags: string[];
   pinned?: boolean;
   links?: { label: string; url: string }[];

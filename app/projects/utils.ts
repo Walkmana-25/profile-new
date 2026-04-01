@@ -23,6 +23,7 @@ export async function getProjects(): Promise<Project[]> {
       endDate: frontmatter.endDate,
       description: frontmatter.description,
       image: frontmatter.image,
+      imageDark: frontmatter.imageDark,
       tags: frontmatter.tags || [],
       pinned: frontmatter.pinned || false,
       links: frontmatter.links,

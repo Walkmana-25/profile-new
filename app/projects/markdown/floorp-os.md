@@ -3,6 +3,8 @@ title: "Floorp OS"
 startDate: "2025-06-25"
 description: "FirefoxベースのWebブラウザ「Floorp」を中核として構築される、Web環境とローカルOS環境を統合したローカルLLM支援型オペレーティングプラットフォーム"
 pinned: true
+image: "/img/Floorp_Logo_OS_C_Light_Transparent.png"
+imageDark: "/img/Floorp_Logo_OS_C_Dark.png"
 tags:
   - "Floorp"
   - "Browser"
@@ -22,6 +24,8 @@ links:
 ---
 
 FirefoxベースのWebブラウザ「Floorp」を中核として構築される、Web環境とローカルOS環境を統合したローカルLLM支援型オペレーティングプラットフォーム。開発者は浅野凌輔（Floorpブラウザ開発者）ほか。
+
+![Floorp OS Logo](/img/Floorp_Logo_OS_C_Light_Transparent.png)
 
 ## 特徴
 

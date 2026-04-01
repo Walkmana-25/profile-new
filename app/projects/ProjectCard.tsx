@@ -1,4 +1,4 @@
-import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
+import { Box, Text, VStack, HStack, Image, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router";
 import { LuPin } from "react-icons/lu";
 import type { Project } from "./types";
@@ -11,7 +11,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, isPinned }: ProjectCardProps) {
-  const imageSrc = project.image || "/no-image.webp";
+  const { colorMode } = useColorMode();
+  const imageSrc = colorMode === "dark" && project.imageDark
+    ? project.imageDark
+    : (project.image || "/no-image.webp");
 
   return (
     <Link to={`/projects/${project.slug}`}>
