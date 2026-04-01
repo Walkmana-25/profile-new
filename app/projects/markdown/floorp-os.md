@@ -9,6 +9,12 @@ tags:
   - "LLM"
   - "OS"
 links:
+  - label: "Floorp"
+    url: "https://ja.floorp.app/"
+  - label: "Floorp OS"
+    url: "https://ja.floorp.app/floorp-os"
+  - label: "GitHub (Floorp OS Automator Backend)"
+    url: "https://github.com/Floorp-Projects/Floorp-OS-Automator-Backend"
   - label: "GitHub (Sapphillon)"
     url: "https://github.com/Sapphillon/Sapphillon"
   - label: "IPA未踏IT人材発掘・育成事業2025"
