@@ -1,6 +1,6 @@
 ---
 title: "Sapphillon"
-startDate: "2026-04-01"
+startDate: "2025-06-25"
 description: "Floorp OSの中核となるLLMオートメーション基盤（ワークフローランタイム）。自然言語の指示から一連の処理を実行するエンジン"
 pinned: true
 tags:
