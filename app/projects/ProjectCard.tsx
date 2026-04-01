@@ -1,9 +1,10 @@
-import { Box, Text, VStack, HStack, Image, useColorMode } from "@chakra-ui/react";
+import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router";
 import { LuPin } from "react-icons/lu";
 import type { Project } from "./types";
 import { formatDateRange } from "./utils";
 import { Tag } from "~/components/ui/tag";
+import { useColorMode } from "~/components/ui/color-mode";
 
 interface ProjectCardProps {
   project: Project;

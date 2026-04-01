@@ -1,8 +1,9 @@
-import { Container, Text, VStack, HStack, Image, Link as ChakraLink, useColorMode } from "@chakra-ui/react";
+import { Container, Text, VStack, HStack, Image, Link as ChakraLink } from "@chakra-ui/react";
 import { Link } from "react-router";
 import ReactMarkdown from "react-markdown";
 import { Prose } from "~/components/ui/prose";
 import { Tag } from "~/components/ui/tag";
+import { useColorMode } from "~/components/ui/color-mode";
 import type { Project } from "./types";
 import { formatDateRange } from "./utils";
 
