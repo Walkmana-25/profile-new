@@ -105,13 +105,19 @@ function applyFallbackData(item) {
 async function main() {
   console.log("Scraping media data...");
 
-  const items = [];
-  for (const url of TARGET_URLS) {
-    console.log(`  → ${url}`);
-    const item = await scrapeUrl(url);
-    // フォールバックデータを適用
-    const itemWithFallback = applyFallbackData(item);
-    items.push(itemWithFallback);
+  let items = [];
+  try {
+    for (const url of TARGET_URLS) {
+      console.log(`  → ${url}`);
+      const item = await scrapeUrl(url);
+      // フォールバックデータを適用
+      const itemWithFallback = applyFallbackData(item);
+      items.push(itemWithFallback);
+    }
+  } catch (err) {
+    console.error(`  ✗ Error during scraping: ${err.message}`);
+    console.log(`  → Using empty data as fallback`);
+    items = [];
   }
 
   const data = {
@@ -128,4 +134,22 @@ async function main() {
   );
 }
 
-main();
+main().catch((err) => {
+  console.error(`  ✗ Fatal error: ${err.message}`);
+  console.log(`  → Writing empty data as fallback`);
+  
+  const data = {
+    items: [],
+    scrapedAt: new Date().toISOString(),
+  };
+  
+  const outputPath = fileURLToPath(OUTPUT_PATH);
+  try {
+    mkdirSync(dirname(outputPath), { recursive: true });
+    writeFileSync(outputPath, JSON.stringify(data, null, 2) + "\n", "utf-8");
+    console.log(`  → Wrote empty data to ${outputPath}`);
+  } catch (writeErr) {
+    console.error(`  ✗ Failed to write fallback data: ${writeErr.message}`);
+    process.exit(1);
+  }
+});

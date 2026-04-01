@@ -6,7 +6,7 @@
     "build": "node scripts/scrape-media.mjs && react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc",
+    "typecheck": "node scripts/scrape-media.mjs && react-router typegen && tsc",
     "deploy": "pnpm run build && wrangler deploy",
     "preview": "pnpm run build && wrangler dev",
     "cf-typegen": "wrangler types",
