@@ -7,6 +7,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
 import { SiZenn, SiSpeakerdeck } from "react-icons/si";
 import type { SocialLink } from "../types";
 
@@ -15,6 +16,7 @@ const iconMap = {
   twitter: FaXTwitter,
   zenn: SiZenn,
   speakerdeck: SiSpeakerdeck,
+  email: HiOutlineMail,
 } as const;
 
 interface SocialLinksProps {

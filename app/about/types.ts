@@ -32,4 +32,4 @@ export interface SocialLink {
   icon: SocialIcon;
 }
 
-export type SocialIcon = "github" | "twitter" | "zenn" | "speakerdeck";
+export type SocialIcon = "github" | "twitter" | "zenn" | "speakerdeck" | "email";

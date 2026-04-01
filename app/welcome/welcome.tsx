@@ -9,7 +9,17 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
 import { SiZenn, SiSpeakerdeck } from "react-icons/si";
+import { profileData } from "../about/data";
+
+const iconMap = {
+  github: FaGithub,
+  twitter: FaXTwitter,
+  zenn: SiZenn,
+  speakerdeck: SiSpeakerdeck,
+  email: HiOutlineMail,
+} as const;
 
 export function Welcome() {
   return (
@@ -41,34 +51,19 @@ export function Welcome() {
           </VStack>
         </Stack>
         <HStack gap={8}>
-          <Link
-            href="https://github.com/Walkmana-25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={FaGithub} boxSize={8} />
-          </Link>
-          <Link
-            href="https://x.com/walkmana_25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={FaXTwitter} boxSize={8} />
-          </Link>
-          <Link
-            href="https://zenn.dev/walkmana_25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={SiZenn} boxSize={8} />
-          </Link>
-          <Link
-            href="https://speakerdeck.com/walkmana25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={SiSpeakerdeck} boxSize={8} />
-          </Link>
+          {profileData.socialLinks.map((link) => {
+            const IconComponent = iconMap[link.icon];
+            return (
+              <Link
+                key={link.platform}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon as={IconComponent} boxSize={8} />
+              </Link>
+            );
+          })}
         </HStack>
       </VStack>
     </Center>

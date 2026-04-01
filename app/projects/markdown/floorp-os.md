@@ -23,7 +23,7 @@ links:
     url: "https://www.ipa.go.jp/jinzai/mitou/it/2025/gaiyou-tk-1.html"
 ---
 
-FirefoxベースのWebブラウザ「Floorp」を中核として構築される、Web環境とローカルOS環境を統合したローカルLLM支援型オペレーティングプラットフォーム。開発者は浅野凌輔（Floorpブラウザ開発者）ほか。
+FirefoxベースのWebブラウザ「Floorp」を中核として構築される、Web環境とローカルOS環境を統合したローカルLLM支援型オペレーティングプラットフォーム。
 
 ![Floorp OS Logo](/img/Floorp_Logo_OS_C_Light_Transparent.png)
 

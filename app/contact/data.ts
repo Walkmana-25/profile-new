@@ -4,8 +4,8 @@ export const contactData: ContactMethod[] = [
   {
     type: "email",
     platform: "Email",
-    value: "your.email@example.com",
-    url: "mailto:your.email@example.com",
+    value: "y.takahashi@mail.floorp.app",
+    url: "mailto:y.takahashi@mail.floorp.app",
     icon: "email",
   },
   {

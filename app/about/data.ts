@@ -118,23 +118,28 @@ export const profileData: Profile = {
   socialLinks: [
     {
       platform: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Walkmana-25",
       icon: "github",
     },
     {
       platform: "X (Twitter)",
-      url: "https://x.com/yourusername",
+      url: "https://x.com/walkmana_25",
       icon: "twitter",
     },
     {
       platform: "Zenn",
-      url: "https://zenn.dev/yourusername",
+      url: "https://zenn.dev/walkmana_25",
       icon: "zenn",
     },
     {
       platform: "SpeakerDeck",
-      url: "https://speakerdeck.com/yourusername",
+      url: "https://speakerdeck.com/walkmana25",
       icon: "speakerdeck",
+    },
+    {
+      platform: "Email",
+      url: "mailto:y.takahashi@mail.floorp.app",
+      icon: "email",
     },
   ],
 };
