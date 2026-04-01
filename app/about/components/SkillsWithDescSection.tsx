@@ -2,11 +2,13 @@ import { Box, VStack, Text, HStack } from "@chakra-ui/react";
 import { Tag } from "~/components/ui/tag";
 import type { SkillCategory } from "../types";
 
-interface SkillsSectionProps {
+interface SkillsWithDescSectionProps {
   skills: SkillCategory[];
 }
 
-export function SkillsSection({ skills }: SkillsSectionProps) {
+export function SkillsWithDescSection({
+  skills,
+}: SkillsWithDescSectionProps) {
   return (
     <VStack gap={4} align="stretch">
       <Text textStyle="2xl" fontWeight="bold">
@@ -22,17 +24,26 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
             bg="bg.panel"
             p={6}
           >
-            <VStack gap={3} align="stretch">
+            <VStack gap={4} align="stretch">
               <Text fontWeight="semibold" fontSize="lg">
                 {category.category}
               </Text>
-              <HStack gap={2} flexWrap="wrap">
+              <VStack gap={3} align="stretch">
                 {category.skills.map((skill) => (
-                  <Tag key={skill.name} size="md" variant="subtle">
-                    {skill.name}
-                  </Tag>
+                  <Box key={skill.name}>
+                    <Text fontWeight="medium" fontSize="md">
+                      {skill.name}
+                    </Text>
+                    <HStack gap={2} flexWrap="wrap" mt={2}>
+                      {skill.technologies.map((tech) => (
+                        <Tag key={tech} size="sm" variant="subtle">
+                          {tech}
+                        </Tag>
+                      ))}
+                    </HStack>
+                  </Box>
                 ))}
-              </HStack>
+              </VStack>
             </VStack>
           </Box>
         ))}

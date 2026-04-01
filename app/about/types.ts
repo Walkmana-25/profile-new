@@ -16,9 +16,14 @@ export interface Affiliation {
   highlighted?: boolean;
 }
 
+export interface SkillItem {
+  name: string;
+  technologies: string[];
+}
+
 export interface SkillCategory {
   category: string;
-  skills: string[];
+  skills: SkillItem[];
 }
 
 export interface SocialLink {

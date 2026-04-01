@@ -1,43 +1,110 @@
 import type { Profile } from "./types";
 
 export const profileData: Profile = {
-  name: "Your Name",
+  name: "Yuta Takahashi",
   avatar: "/public/avatar.jpg",
   affiliations: [
     {
-      organization: "Your University",
-      department: "Department Name",
-      role: "Student / Researcher",
+      organization: "東洋大学",
+      department: "情報連携学部 情報連携学科",
+      period: "2028年3月卒業予定",
       highlighted: true,
     },
     {
-      organization: "Your Organization",
-      role: "Your Role",
-      period: "2024 - Present",
+      organization: "未踏IT人材育成発掘事業",
+      role: "2025年度 クリエータ",
+      highlighted: true,
     },
   ],
-  bio: "Write a brief bio about yourself. This could include your background, interests, goals, or anything you'd like visitors to know about you. For example, you might mention your passion for technology, your academic journey, or your career aspirations.",
+  bio: "",
   skills: [
     {
-      category: "Programming Languages",
-      skills: ["TypeScript", "Python", "Go", "Rust"],
+      category: "プログラミング言語",
+      skills: [
+        {
+          name: "Rust",
+          technologies: [
+            "Web API",
+            "gRPC",
+            "Sea ORM",
+            "Deno",
+            "JavaScript Runtime",
+          ],
+        },
+        {
+          name: "TypeScript",
+          technologies: ["React", "Web"],
+        },
+      ],
     },
     {
-      category: "Frameworks",
-      skills: ["React", "Next.js", "Chakra UI", "Express"],
+      category: "インフラ・サーバー",
+      skills: [
+        {
+          name: "サーバー構築（物理）",
+          technologies: [
+            "仮想基盤",
+            "Kubernetes",
+            "クラウド自作",
+            "ネットワーク機器",
+          ],
+        },
+        {
+          name: "Docker",
+          technologies: ["DevContainer", "Docker Compose"],
+        },
+      ],
     },
     {
-      category: "Tools & Infrastructure",
-      skills: ["Git", "Docker", "AWS", "Vim", "Linux"],
+      category: "データベース",
+      skills: [
+        {
+          name: "RDBMS",
+          technologies: ["PostgreSQL", "MySQL", "MariaDB"],
+        },
+        {
+          name: "NoSQL",
+          technologies: ["Redis", "MongoDB"],
+        },
+      ],
+    },
+    {
+      category: "クラウド",
+      skills: [
+        {
+          name: "Oracle Cloud",
+          technologies: ["Kubernetes", "Compute Instance", "Reverse Proxy"],
+        },
+        {
+          name: "Azure",
+          technologies: ["Entra ID", "OAuth", "SSO"],
+        },
+        {
+          name: "Google Cloud Platform",
+          technologies: ["GCE", "OAuth", "SSO", "Game Server"],
+        },
+      ],
+    },
+    {
+      category: "開発ツール",
+      skills: [
+        {
+          name: "CI/CD",
+          technologies: ["GitHub Actions", "K8s", "Terraform", "Ansible"],
+        },
+        {
+          name: "ソースコード管理",
+          technologies: ["Git", "GitHub"],
+        },
+      ],
     },
   ],
   interests: [
-    "Open Source",
-    "Web Development",
+    "自宅サーバー構築",
+    "Web開発",
     "System Design",
-    "Machine Learning",
-    "Photography",
-    "Reading",
+    "Kubernetes",
+    "オープンソース",
   ],
   socialLinks: [
     {
