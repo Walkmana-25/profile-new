@@ -108,6 +108,15 @@ export const profileData: Profile = {
         },
       ],
     },
+    {
+      category: "資格",
+      skills: [
+        {
+          name: "基本情報技術者試験",
+          technologies: ["FE", "IPA"]
+        }
+      ]
+    },
   ],
   interests: [
     "自宅サーバー構築",
