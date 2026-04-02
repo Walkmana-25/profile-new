@@ -25,8 +25,6 @@ links:
 
 FirefoxベースのWebブラウザ「Floorp」を中核として構築される、Web環境とローカルOS環境を統合したローカルLLM支援型オペレーティングプラットフォーム。
 
-![Floorp OS Logo](/img/Floorp_Logo_OS_C_Light_Transparent.png)
-
 ## 特徴
 
 - **Web↔ローカルの統合**: Webアプリとローカルアプリの境界をなくし、1つの流れとして横断的に操作できる

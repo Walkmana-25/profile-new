@@ -1,4 +1,4 @@
-import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
+import { Box, Text, VStack, HStack, Image, Flex } from "@chakra-ui/react";
 import { Link } from "react-router";
 import { LuPin } from "react-icons/lu";
 import type { Project } from "./types";
@@ -29,7 +29,27 @@ export function ProjectCard({ project, isPinned }: ProjectCardProps) {
         transition="all 0.2s"
         cursor="pointer"
       >
-        <HStack gap={0} align="stretch">
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          align="stretch"
+          overflow="hidden"
+        >
+          <Box
+            w={{ base: "100%", md: "200px" }}
+            h={{ base: "200px", md: "auto" }}
+            minH={{ base: "200px", md: "150px" }}
+            flexShrink={0}
+            overflow="hidden"
+          >
+            <Image
+              src={imageSrc}
+              alt={project.title}
+              w="100%"
+              h="100%"
+              objectFit="cover"
+            />
+          </Box>
+
           <VStack align="start" gap={2} p={4} flex="1">
             <Text fontSize="sm" color="fg.muted">
               {formatDateRange(project.startDate, project.endDate)}
@@ -56,16 +76,7 @@ export function ProjectCard({ project, isPinned }: ProjectCardProps) {
               </HStack>
             )}
           </VStack>
-
-          <Image
-            src={imageSrc}
-            alt={project.title}
-            w="200px"
-            h="auto"
-            minH="150px"
-            objectFit="cover"
-          />
-        </HStack>
+        </Flex>
       </Box>
     </Link>
   );
