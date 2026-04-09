@@ -16,15 +16,16 @@ export function BasicInfoCard({ profile }: BasicInfoCardProps) {
       _hover={{ borderColor: "border.emphasized" }}
       transition="all 0.2s"
     >
-      <HStack gap={8} align="start">
+      <HStack gap={8} align="start" flexDirection={{ base: "column", md: "row" }}>
         <Image
           src={profile.avatar}
           alt={profile.name}
           borderRadius="full"
-          boxSize="200px"
+          boxSize={{ base: "120px", md: "200px" }}
           objectFit="cover"
+          flexShrink={0}
         />
-        <VStack align="start" gap={4} flex="1">
+        <VStack align="start" gap={4} flex="1" minW={0}>
           <Text textStyle="4xl" fontWeight="bold">
             {profile.name}
           </Text>
