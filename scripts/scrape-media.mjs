@@ -10,6 +10,9 @@ const TARGET_URLS = [
   "https://www.toyo.ac.jp/contents/gakuhou/281/",
   "https://www.iniad.org/blog/2025/06/10/post-3268/",
   "https://www.ipa.go.jp/jinzai/mitou/it/2025/gaiyou-tk-1.html",
+  "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikagaiyou-tk-1.pdf",
+  "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikashosai-tk-1.pdf",
+  "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/hyouka-tk-1.pdf",
 ];
 
 const OUTPUT_PATH = new URL(
@@ -24,6 +27,26 @@ const fallbackData = {
   'https://www.toyo.ac.jp/contents/gakuhou/281/': {
     title: '東洋大学学報281',
     description: '東洋大学の学報第281号。PDF形式で提供されており、大学の研究活動や教育に関する情報を含んでいます。',
+    ogImage: null
+  },
+  'https://www.iniad.org/blog/2025/06/10/post-3268/': {
+    title: '【学生】浅野凌輔さん・髙橋侑大さんが IPA による「2025 年度 未踏 IT 人材発掘・育成事業」に採択されました',
+    description: '本学部の学生である浅野凌輔さん・髙橋侑大さんと電気通信大学の鮎澤颯人さんの提案プロジェクト「OS と Web ブラウザを統合したローカル LLM 支援型オペレーティングプラットフォームの開発」が、2025 年度の「未踏 IT 人材発掘・育成事業」に採択されました。 この事業は、IPA（独立行政法人情報処理推進機構）が毎年、25 歳以下の優秀な若手 IT 人材を発掘・育成するために実施している制度です。2025 年度は 227 件の応募があり、採択されたのは 21 件でした。 浅野さん・髙橋さんらが提案したのは「Floorp OS（フロープオーエス）」というソフトウェアの開発です。これは、普段使...',
+    ogImage: 'https://static-files.iniad.org/sites/1/2024/02/banner_award.jpeg'
+  },
+  'https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikagaiyou-tk-1.pdf': {
+    title: '2025年度IPA未踏 IT 人材発掘・育成事業 プロジェクト成果 概要',
+    description: '',
+    ogImage: null
+  },
+  'https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikashosai-tk-1.pdf': {
+    title: '2025年度IPA未踏 IT 人材発掘・育成事業 プロジェクト成果 詳細',
+    description: '',
+    ogImage: null
+  },
+  'https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/hyouka-tk-1.pdf': {
+    title: '2025年度IPA未踏 IT 人材発掘・育成事業 PM評価',
+    description: '',
     ogImage: null
   }
 };
@@ -88,18 +111,15 @@ function applyFallbackData(item) {
     return item;
   }
 
-  // タイトルが取得失敗の場合のみフォールバックを適用
-  if (item.title === "タイトル取得失敗") {
-    console.log(`  ↻ Using fallback data for ${item.url}`);
-    return {
-      ...item,
-      title: fallback.title,
-      description: fallback.description,
-      ogImage: fallback.ogImage,
-    };
-  }
-
-  return item;
+  // タイトルが取得失敗、またはフォールバックデータがある場合は適用
+  // 今回は特定URLのディスクリプションを上書きしたいため、常にフォールバックを優先する
+  console.log(`  ↻ Using fallback data for ${item.url}`);
+  return {
+    ...item,
+    title: fallback.title ?? item.title,
+    description: fallback.description ?? item.description,
+    ogImage: fallback.ogImage ?? item.ogImage,
+  };
 }
 
 async function main() {
