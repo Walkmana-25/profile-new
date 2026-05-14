@@ -25,23 +25,32 @@
       "ogImage": "https://www.ipa.go.jp/k3q2q400000050d7-img/k3q2q400000050dg.png"
     },
     {
+      "url": "https://www.ipa.go.jp/jinzai/mitou/it/2025/seika.html",
+      "title": "2025年度未踏IT人材発掘・育成事業プロジェクト成果 | デジタル人材の育成 | IPA 独立行政法人 情報処理推進機構",
+      "description": "情報処理推進機構（IPA）の「2025年度未踏IT人材発掘・育成事業プロジェクト成果」に関する情報です。",
+      "ogImage": "https://www.ipa.go.jp/k3q2q400000050d7-img/k3q2q400000050dg.png"
+    },
+    {
       "url": "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikagaiyou-tk-1.pdf",
       "title": "2025年度IPA未踏 IT 人材発掘・育成事業 プロジェクト成果 概要",
       "description": "",
-      "ogImage": null
+      "ogImage": null,
+      "defaultDescription": "2025年度IPA未踏IT人材発掘・育成事業におけるFloorp OSプロジェクトの成果概要をまとめた資料です。開発した機能や達成した目標などを確認できます。"
     },
     {
       "url": "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikashosai-tk-1.pdf",
       "title": "2025年度IPA未踏 IT 人材発掘・育成事業 プロジェクト成果 詳細",
       "description": "",
-      "ogImage": null
+      "ogImage": null,
+      "defaultDescription": "2025年度IPA未踏IT人材発掘・育成事業におけるFloorp OSプロジェクトの成果詳細報告書です。技術的な実装詳細、開発プロセス、今後の展望などを網羅しています。"
     },
     {
       "url": "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/hyouka-tk-1.pdf",
       "title": "2025年度IPA未踏 IT 人材発掘・育成事業 PM評価",
       "description": "",
-      "ogImage": null
+      "ogImage": null,
+      "defaultDescription": "2025年度IPA未踏IT人材発掘・育成事業におけるプロジェクトマネージャー（PM）からの評価報告書です。プロジェクトの成果や技術的な貢献に対するPMの評価を確認できます。"
     }
   ],
-  "scrapedAt": "2026-05-13T03:03:49.320Z"
+  "scrapedAt": "2026-05-14T10:26:46.735Z"
 }

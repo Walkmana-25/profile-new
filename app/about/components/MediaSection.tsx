@@ -1,11 +1,4 @@
-import {
-  Box,
-  VStack,
-  Text,
-  SimpleGrid,
-  Link,
-  Image,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, SimpleGrid, Link, Image } from "@chakra-ui/react";
 import type { MediaItem } from "../types";
 
 interface MediaSectionProps {
@@ -44,7 +37,11 @@ export function MediaSection({ items }: MediaSectionProps) {
             >
               <VStack gap={3} align="stretch" flex={1}>
                 <Image
-                  src={item.ogImage && item.ogImage.trim() ? item.ogImage : "/no-image.webp"}
+                  src={
+                    item.ogImage && item.ogImage.trim()
+                      ? item.ogImage
+                      : "/no-image.webp"
+                  }
                   alt={item.title}
                   h="200px"
                   w="full"
@@ -57,7 +54,7 @@ export function MediaSection({ items }: MediaSectionProps) {
                     {item.title}
                   </Text>
                   <Text color="fg.muted" fontSize="sm" lineClamp={3}>
-                    {item.description}
+                    {item.description || item.defaultDescription || ""}
                   </Text>
                 </VStack>
               </VStack>

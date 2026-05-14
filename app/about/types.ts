@@ -33,7 +33,12 @@ export interface SocialLink {
   icon: SocialIcon;
 }
 
-export type SocialIcon = "github" | "twitter" | "zenn" | "speakerdeck" | "email";
+export type SocialIcon =
+  | "github"
+  | "twitter"
+  | "zenn"
+  | "speakerdeck"
+  | "email";
 
 /** Media Section の各カードデータ */
 export interface MediaItem {
@@ -41,8 +46,10 @@ export interface MediaItem {
   url: string;
   /** ページタイトル */
   title: string;
-  /** ページの説明 */
+  /** ページの説明（スクレイピング結果） */
   description: string;
+  /** 手動設定の説明。descriptionが空の場合のフォールバックとして使用 */
+  defaultDescription?: string;
   /** OG画像のURL（nullの場合はフォールバック画像を使用） */
   ogImage: string | null;
 }
