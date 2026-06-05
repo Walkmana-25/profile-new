@@ -13,6 +13,8 @@ const TARGET_URLS = [
   "https://www.ipa.go.jp/jinzai/mitou/it/2025/seika.html",
   "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikagaiyou-tk-1.pdf",
   "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/seikashosai-tk-1.pdf",
+  "https://www.ipa.go.jp/jinzai/mitou/it/2025/supercreator.html",
+  "https://www.ipa.go.jp/jinzai/mitou/koubo/career/2025/2025-supercreator-16.html",
   "https://www.ipa.go.jp/jinzai/mitou/it/2025/rcu1hd000000czdf-att/hyouka-tk-1.pdf",
 ];
 
