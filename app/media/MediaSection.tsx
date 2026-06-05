@@ -1,5 +1,5 @@
 import { Box, VStack, Text, SimpleGrid, Link, Image } from "@chakra-ui/react";
-import type { MediaItem } from "../types";
+import type { MediaItem } from "./types";
 
 interface MediaSectionProps {
   items: MediaItem[];
