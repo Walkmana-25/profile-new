@@ -46,7 +46,7 @@ export function Welcome() {
             </Text>
             <Text textStyle={"lg"}>東洋大学 情報連携学部 情報連携学科</Text>
             <Text textStyle={"lg"}>
-              2025年度 未踏IT人材発掘・育成事業 クリエーター
+              2025年度 未踏IT人材発掘・育成事業 スーパークリエータ
             </Text>
           </VStack>
         </Stack>
