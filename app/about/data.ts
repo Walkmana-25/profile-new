@@ -12,7 +12,7 @@ export const profileData: Profile = {
     },
     {
       organization: "未踏IT人材育成発掘事業",
-      role: "2025年度 クリエータ",
+      role: "2025年度 スーパークリエータ",
       highlighted: true,
     },
   ],
