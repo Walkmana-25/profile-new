@@ -4,6 +4,8 @@ import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
 
+export { cloudflareContext } from "./context";
+
 export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
